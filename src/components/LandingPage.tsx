@@ -1,15 +1,18 @@
 import React from 'react';
-import { User } from 'lucide-react';
+import muhire from '../TeamPics/profile.jpg';
+import nziza from '../TeamPics/nziza.jpeg';
+import ngwino from '../TeamPics/ngwino.jpeg';
+import gabi from '../TeamPics/gabi.jpeg';
 
 interface LandingPageProps {
   onUserSelect: (userName: string) => void;
 }
 
 const teamMembers = [
-  { name: 'Alex Chen', role: 'Product Manager' },
-  { name: 'Sarah Rodriguez', role: 'UI/UX Designer' },
-  { name: 'Marcus Johnson', role: 'Lead Developer' },
-  { name: 'Emily Davis', role: 'Business Analyst' }
+  { name: 'Pacifique MUHIRE', role: 'Engineer', photo: muhire },
+  { name: 'Alain NZIZA', role: 'Engineer', photo: nziza },
+  { name: 'Christian NGWINO', role: 'Engineer', photo: ngwino },
+  { name: 'Gabriella', role: 'SME', photo: gabi },
 ];
 
 function LandingPage({ onUserSelect }: LandingPageProps) {
@@ -33,9 +36,11 @@ function LandingPage({ onUserSelect }: LandingPageProps) {
               className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer p-6 text-center border border-gray-100"
             >
               <div className="mb-4 flex justify-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-full flex items-center justify-center">
-                  <User className="w-10 h-10 text-white" />
-                </div>
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  className="w-20 h-20 rounded-full object-cover"
+                />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {member.name}
